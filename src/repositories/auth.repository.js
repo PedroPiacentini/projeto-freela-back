@@ -10,3 +10,10 @@ export function createUserDB(name, email, password) {
         [name, email, password]
     );
 }
+
+export function createSessionDB(userId, token) {
+    return db.query(
+        `INSERT INTO Sessoes (id_usuario, token) VALUES ($1, $2);`,
+        [userId, token]
+    );
+}
