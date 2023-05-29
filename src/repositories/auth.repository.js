@@ -18,3 +18,10 @@ export function createSessionDB(userId, token) {
         [userId, token]
     );
 }
+
+export function findSessionDB(token) {
+    return db.query(
+        `SELECT id_usuario FROM Sessoes WHERE token=$1`,
+        [token]
+    )
+}
