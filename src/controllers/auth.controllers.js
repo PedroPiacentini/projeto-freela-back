@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 import bcrypt from "bcrypt";
-import { createUserDB, getUserByEmailDB } from "../repositories/auth.repository";
+import { createUserDB, getUserByEmailDB } from "../repositories/auth.repository.js";
 
 export async function signUp(req, res) {
     const { name, email, password } = req.body;
@@ -17,3 +17,4 @@ export async function signUp(req, res) {
         res.status(500).send(err.message);
     }
 }
+
