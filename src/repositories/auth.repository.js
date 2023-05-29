@@ -6,7 +6,7 @@ export function getUserByEmailDB(email) {
 
 export function createUserDB(name, email, password) {
     return db.query(
-        `INSERT INTO usuarios (nome, email, senha) VALUES ($1s, $2, $3)`,
+        `INSERT INTO usuarios (nome, email, senha) VALUES ($1, $2, $3)`,
         [name, email, password]
     );
 }
